@@ -12,13 +12,13 @@ import java.io.IOException;
 public class Game {
     //fields
     private Screen screen;
-    private int x = 10;
-    private int y = 10;
+    Hero hero;
     //public interface
     Game()
     {
         try
         {
+            hero = new Hero(10,10);
             Terminal terminal = new DefaultTerminalFactory().createTerminal();
             screen = new TerminalScreen(terminal);
             screen.setCursorPosition(null);   // we don't need a cursor
@@ -34,7 +34,7 @@ public class Game {
     private void draw() throws IOException
     {
         screen.clear();
-        screen.setCharacter(x, y, new TextCharacter('X'));
+        hero.draw(screen);
         screen.refresh();
     }
 
@@ -65,22 +65,22 @@ public class Game {
         {
             case ArrowUp:
             {
-                y--; //lower y means it's closer to the top
+                hero.moveUp();
                 break;
             }
             case ArrowDown:
             {
-                y++; //higher y means it's closer to the bottom
+                hero.moveDown();
                 break;
             }
             case ArrowRight:
             {
-                x++;
+                hero.moveRight();
                 break;
             }
             case ArrowLeft:
             {
-                x--;
+                hero.moveLeft();
                 break;
             }
             default:break;
