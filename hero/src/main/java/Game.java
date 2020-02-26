@@ -12,13 +12,14 @@ import java.io.IOException;
 public class Game {
     //fields
     private Screen screen;
-    private Hero hero;
+    //private Hero hero;
+    private Arena arena;
     //functions
-    Game()
+    public Game()
     {
         try
         {
-            hero = new Hero(10,10);
+            arena = new Arena(10,10,10,10);
             Terminal terminal = new DefaultTerminalFactory().createTerminal();
             screen = new TerminalScreen(terminal);
             screen.setCursorPosition(null);   // we don't need a cursor
@@ -34,7 +35,7 @@ public class Game {
     private void draw() throws IOException
     {
         screen.clear();
-        hero.draw(screen);
+        arena.draw(screen);
         screen.refresh();
     }
 
@@ -52,36 +53,8 @@ public class Game {
 
     private void processKey(KeyStroke key)
     {
-        System.out.println(key);
-
-        switch (key.getKeyType())
-        {
-            case ArrowUp:
-            {
-                moveHero(hero.moveUp());
-                break;
-            }
-            case ArrowDown:
-            {
-                moveHero(hero.moveDown());
-                break;
-            }
-            case ArrowRight:
-            {
-                moveHero(hero.moveRight());
-                break;
-            }
-            case ArrowLeft:
-            {
-                moveHero(hero.moveLeft());
-                break;
-            }
-            default:break;
-        }
+        arena.processKey(key);
     }
 
-    private void moveHero(Position position)
-    {
-        hero.setPosition(position);
-    }
+
 }

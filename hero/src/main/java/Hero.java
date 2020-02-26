@@ -6,7 +6,7 @@ public class Hero {
     //fields
     private Position position;
     //functions
-    Hero(int x,int y)
+    public Hero(int x,int y)
     {
         position = new Position(x,y);
     }
