@@ -6,31 +6,22 @@ import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.screen.Screen;
 
 
-public class Hero {
+public class Hero extends Element {
     //fields
-    private Position position;
+    //private Position position;
     //functions
+
     public Hero(int x,int y)
     {
-        position = new Position(x,y);
+        super(x,y);
     }
 
-    //getters and setters
-    public int getX() {
-        return position.getX();
+    /*
+    public Position getPosition()
+    {
+        return position;
     }
-
-    public void setX(int x) {
-        this.position.setX(x);
-    }
-
-    public int getY() {
-        return position.getY();
-    }
-
-    public void setY(int y) {
-        this.position.setY(y);
-    }
+    */
 
     //hero movement
     public Position moveUp()
@@ -50,10 +41,12 @@ public class Hero {
         return new Position(position.getX()-1,position.getY());
     }
 
+    /*
     public void setPosition(Position position)
     {
         this.position=position;
     }
+     */
 
     public void draw(TextGraphics graphics)
     {
