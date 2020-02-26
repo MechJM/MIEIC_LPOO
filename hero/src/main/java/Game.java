@@ -1,4 +1,5 @@
 import com.googlecode.lanterna.TextCharacter;
+import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.input.KeyType;
 import com.googlecode.lanterna.screen.Screen;
@@ -19,7 +20,7 @@ public class Game {
     {
         try
         {
-            arena = new Arena(10,10,10,10);
+            arena = new Arena(10,10,5,5);
             Terminal terminal = new DefaultTerminalFactory().createTerminal();
             screen = new TerminalScreen(terminal);
             screen.setCursorPosition(null);   // we don't need a cursor
@@ -34,8 +35,9 @@ public class Game {
 
     private void draw() throws IOException
     {
+        TextGraphics graphics = screen.newTextGraphics();
         screen.clear();
-        arena.draw(screen);
+        arena.draw(graphics);
         screen.refresh();
     }
 
