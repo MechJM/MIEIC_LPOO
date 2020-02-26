@@ -1,54 +1,54 @@
 import com.googlecode.lanterna.TextCharacter;
 import com.googlecode.lanterna.screen.Screen;
+import javafx.geometry.Pos;
 
 public class Hero {
     //fields
-    private int x;
-    private int y;
-    //public interface
+    private Position position;
+    //functions
     Hero(int x,int y)
     {
-        this.x=x;
-        this.y=y;
+        this.position.setX(x);
+        this.position.setY(y);
     }
 
     //getters and setters
     public int getX() {
-        return x;
+        return position.getX();
     }
 
     public void setX(int x) {
-        this.x = x;
+        this.position.setX(x);
     }
 
     public int getY() {
-        return y;
+        return position.getY();
     }
 
     public void setY(int y) {
-        this.y = y;
+        this.position.setY(y);
     }
 
     //hero movement
-    public void moveUp()
+    public Position moveUp()
     {
-        y--; //lower y means it's closer to the top
+        return new Position(position.getX(),position.getY()-1);
     }
-    public void moveDown()
+    public Position moveDown()
     {
-        y++; //higher y means it's closer to the bottom
+        return new Position(position.getX(), position.getY() + 1);
     }
-    public void moveRight()
+    public Position moveRight()
     {
-        x++;
+        return new Position(position.getX()+1,position.getY());
     }
-    public void moveLeft()
+    public Position moveLeft()
     {
-        x--;
+        return new Position(position.getX()-1,position.getY());
     }
 
     public void draw(Screen screen)
     {
-        screen.setCharacter(x,y, new TextCharacter('X'));
+        screen.setCharacter(position.getX(),position.getY(), new TextCharacter('X'));
     }
 }
