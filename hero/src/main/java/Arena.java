@@ -7,11 +7,14 @@ import com.googlecode.lanterna.screen.Screen;
 
 import javax.swing.*;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Arena {
     //fields
     private int width;
     private int height;
+    private List<Wall> walls;
     Hero hero;
     //functions
 
@@ -20,6 +23,7 @@ public class Arena {
         hero = new Hero(x,y);
         this.width = width;
         this.height = height;
+        this.walls=createWalls();
     }
 
     public int getWidth() {
@@ -74,6 +78,7 @@ public class Arena {
         graphics.fillRectangle(new TerminalPosition(0, 0), new TerminalSize(width, height), ' ');
 
         hero.draw(graphics);
+        for (Wall wall : walls) wall.draw(graphics);
     }
 
     public void moveHero(Position position)
@@ -84,7 +89,28 @@ public class Arena {
 
     private boolean canHeroMove(Position position)
     {
-        if (position.getY()<height && position.getX()<width) return true;
-        else return false;
+        for (Wall wall : walls)
+        {
+            if (wall.getPosition().equals(position)) return false;
+        }
+
+        return true;
     }
+
+    private List<Wall> createWalls() {
+        List<Wall> walls = new ArrayList<>();
+
+        for (int c = 0; c < width; c++) {
+            walls.add(new Wall(c, 0));
+            walls.add(new Wall(c, height - 1));
+        }
+
+        for (int r = 1; r < height - 1; r++) {
+            walls.add(new Wall(0, r));
+            walls.add(new Wall(width - 1, r));
+        }
+
+        return walls;
+    }
+
 }
