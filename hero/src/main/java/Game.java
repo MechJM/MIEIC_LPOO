@@ -41,15 +41,13 @@ public class Game {
     public void run() throws IOException
     {
 
-        while(true)
-        {
+        while (true) {
             draw();
             KeyStroke key = screen.readInput();
             if (key.getKeyType() == KeyType.Character && key.getCharacter() == 'q') screen.close();
             if (key.getKeyType() == KeyType.EOF) break;
             processKey(key);
         }
-
     }
 
     private void processKey(KeyStroke key)
@@ -60,25 +58,30 @@ public class Game {
         {
             case ArrowUp:
             {
-                hero.moveUp();
+                moveHero(hero.moveUp());
                 break;
             }
             case ArrowDown:
             {
-                hero.moveDown();
+                moveHero(hero.moveDown());
                 break;
             }
             case ArrowRight:
             {
-                hero.moveRight();
+                moveHero(hero.moveRight());
                 break;
             }
             case ArrowLeft:
             {
-                hero.moveLeft();
+                moveHero(hero.moveLeft());
                 break;
             }
             default:break;
         }
+    }
+
+    private void moveHero(Position position)
+    {
+        hero.setPosition(position);
     }
 }

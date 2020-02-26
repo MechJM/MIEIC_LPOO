@@ -1,6 +1,6 @@
 import com.googlecode.lanterna.TextCharacter;
 import com.googlecode.lanterna.screen.Screen;
-import javafx.geometry.Pos;
+
 
 public class Hero {
     //fields
@@ -8,8 +8,7 @@ public class Hero {
     //functions
     Hero(int x,int y)
     {
-        this.position.setX(x);
-        this.position.setY(y);
+        position = new Position(x,y);
     }
 
     //getters and setters
@@ -45,6 +44,11 @@ public class Hero {
     public Position moveLeft()
     {
         return new Position(position.getX()-1,position.getY());
+    }
+
+    public void setPosition(Position position)
+    {
+        this.position=position;
     }
 
     public void draw(Screen screen)
