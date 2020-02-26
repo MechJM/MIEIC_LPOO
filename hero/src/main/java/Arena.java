@@ -17,6 +17,7 @@ public class Arena {
     private int height;
     private List<Wall> walls;
     private List<Coin> coins;
+    private List<Monster> monsters;
     Hero hero;
     //functions
 
@@ -27,6 +28,7 @@ public class Arena {
         this.height = height;
         this.walls = createWalls();
         this.coins = createCoins();
+        this.monsters = createMonsters();
     }
 
     public int getWidth() {
@@ -83,6 +85,7 @@ public class Arena {
         hero.draw(graphics);
         for (Wall wall : walls) wall.draw(graphics);
         for (Coin coin : coins) coin.draw(graphics);
+        for (Monster monster : monsters) monster.draw(graphics);
     }
 
     public void moveHero(Position position)
@@ -149,6 +152,18 @@ public class Arena {
                 break;
             }
         }
+    }
+
+    public List<Monster> createMonsters()
+    {
+        ArrayList<Monster> result = new ArrayList<>();
+
+        return result;
+    }
+
+    public void moveMonsters()
+    {
+
     }
 
 }
