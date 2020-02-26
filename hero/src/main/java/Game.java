@@ -20,7 +20,7 @@ public class Game {
     {
         try
         {
-            arena = new Arena(10,10,5,5);
+            arena = new Arena(50,24,5,5); //alturas acima de 24 fazem com que a parede de baixo nao apareca(?)
             Terminal terminal = new DefaultTerminalFactory().createTerminal();
             screen = new TerminalScreen(terminal);
             screen.setCursorPosition(null);   // we don't need a cursor

@@ -9,12 +9,14 @@ import javax.swing.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Arena {
     //fields
     private int width;
     private int height;
     private List<Wall> walls;
+    private List<Coin> coins;
     Hero hero;
     //functions
 
@@ -23,7 +25,8 @@ public class Arena {
         hero = new Hero(x,y);
         this.width = width;
         this.height = height;
-        this.walls=createWalls();
+        this.walls = createWalls();
+        this.coins = createCoins();
     }
 
     public int getWidth() {
@@ -79,12 +82,14 @@ public class Arena {
 
         hero.draw(graphics);
         for (Wall wall : walls) wall.draw(graphics);
+        for (Coin coin : coins) coin.draw(graphics);
     }
 
     public void moveHero(Position position)
     {
         if (canHeroMove(position))
             hero.setPosition(position);
+        retrieveCoins();
     }
 
     private boolean canHeroMove(Position position)
@@ -111,6 +116,39 @@ public class Arena {
         }
 
         return walls;
+    }
+
+    private List<Coin> createCoins() {
+        Random random = new Random();
+        ArrayList<Position> positions = new ArrayList<>();
+        positions.add(hero.getPosition());
+        ArrayList<Coin> coins = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            Coin new_coin = null;
+            while (new_coin == null)
+            {
+                new_coin = new Coin(random.nextInt(width - 2) + 1, random.nextInt(height - 2) + 1);
+                for (Position pos : positions)
+                {
+                    if (pos.equals(new_coin.getPosition())) new_coin = null;
+                }
+            }
+            coins.add(new_coin);
+            positions.add(new_coin.getPosition());
+        }
+        return coins;
+    }
+
+    public void retrieveCoins()
+    {
+        for (Coin coin : coins)
+        {
+            if (coin.getPosition().equals(hero.getPosition()))
+            {
+                coins.remove(coin);
+                break;
+            }
+        }
     }
 
 }
