@@ -3,9 +3,8 @@ import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.input.KeyStroke;
-import com.googlecode.lanterna.screen.Screen;
+import com.googlecode.lanterna.input.KeyType;
 
-import javax.swing.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -49,7 +48,10 @@ public class Arena {
 
     public void processKey(KeyStroke key)
     {
+        moveMonsters();
         System.out.println(key);
+
+        if (key.getKeyType() == KeyType.Character && key.getCharacter() == 'q') Game.shouldContinue = false;
 
         switch (key.getKeyType())
         {
@@ -156,14 +158,41 @@ public class Arena {
 
     public List<Monster> createMonsters()
     {
-        ArrayList<Monster> result = new ArrayList<>();
-
-        return result;
+        Random random = new Random();
+        ArrayList<Position> positions = new ArrayList<>();
+        positions.add(hero.getPosition());
+        for (Coin coin : coins) positions.add(coin.getPosition());
+        ArrayList<Monster> monsters = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            Monster newMonster = null;
+            while (newMonster == null)
+            {
+                newMonster = new Monster(random.nextInt(width - 2) + 1, random.nextInt(height - 2) + 1);
+                for (Position pos : positions)
+                {
+                    if (pos.equals(newMonster.getPosition())) newMonster = null;
+                }
+            }
+            monsters.add(newMonster);
+            positions.add(newMonster.getPosition());
+        }
+        return monsters;
     }
 
     public void moveMonsters()
     {
+        verifyMonsterCollisions();
+        for (Monster monster : monsters) monster.setPosition(monster.move());
+        verifyMonsterCollisions();
+    }
 
+    public void verifyMonsterCollisions()
+    {
+        for (Monster monster : monsters) if (monster.getPosition().equals(hero.getPosition()))
+        {
+            System.out.println("GAME OVER");
+            Game.shouldContinue = false;
+        }
     }
 
 }

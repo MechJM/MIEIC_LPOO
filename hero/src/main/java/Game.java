@@ -13,8 +13,8 @@ import java.io.IOException;
 public class Game {
     //fields
     private Screen screen;
-    //private Hero hero;
     private Arena arena;
+    public static boolean shouldContinue = true;
     //functions
     public Game()
     {
@@ -45,7 +45,7 @@ public class Game {
         while (true) {
             draw();
             KeyStroke key = screen.readInput();
-            if (key.getKeyType() == KeyType.Character && key.getCharacter() == 'q') screen.close();
+            if (!shouldContinue) screen.close();
             if (key.getKeyType() == KeyType.EOF) break;
             processKey(key);
         }
