@@ -150,7 +150,7 @@ public class Arena {
                 {
                     System.out.println("YOU WON!");
                     System.out.print("Score: ");
-                    System.out.print(score);
+                    System.out.println(score);
                     Game.shouldContinue = false;
                 }
                 break;
@@ -205,8 +205,9 @@ public class Arena {
         {
             System.out.println("GAME OVER");
             System.out.print("Score: ");
-            System.out.print(score);
+            System.out.println(score);
             Game.shouldContinue = false;
+            Game.lost = true;
         }
     }
 
