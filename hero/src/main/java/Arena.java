@@ -146,6 +146,13 @@ public class Arena {
             {
                 coins.remove(coin);
                 score++;
+                if (coins.isEmpty())
+                {
+                    System.out.println("YOU WON!");
+                    System.out.print("Score: ");
+                    System.out.print(score);
+                    Game.shouldContinue = false;
+                }
                 break;
             }
         }
@@ -198,7 +205,7 @@ public class Arena {
         {
             System.out.println("GAME OVER");
             System.out.print("Score: ");
-            System.out.println(score);
+            System.out.print(score);
             Game.shouldContinue = false;
         }
     }
