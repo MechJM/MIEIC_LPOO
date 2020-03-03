@@ -182,8 +182,17 @@ public class Arena {
     public void moveMonsters()
     {
         verifyMonsterCollisions();
-        for (Monster monster : monsters) monster.setPosition(monster.move());
+        for (Monster monster : monsters) {
+            Position newMonsterPosition = monster.move();
+            if (canMonsterMove(newMonsterPosition)) monster.setPosition(newMonsterPosition);
+        }
         verifyMonsterCollisions();
+    }
+
+    public boolean canMonsterMove(Position position)
+    {
+        for (Wall wall : walls) if (wall.getPosition().equals(position)) return false;
+        return true;
     }
 
     public void verifyMonsterCollisions()
