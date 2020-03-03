@@ -8,12 +8,14 @@ import com.googlecode.lanterna.screen.Screen;
 
 public class Hero extends Element {
     //fields
-    //private Position position;
+    private int energy;
+    public boolean isDead = false;
     //functions
 
     public Hero(int x,int y)
     {
         super(x,y);
+        energy = 5;
     }
 
     /*
@@ -47,6 +49,12 @@ public class Hero extends Element {
         this.position=position;
     }
      */
+
+    public void lowerEnergy()
+    {
+        energy--;
+        if (energy == 0) isDead = true;
+    }
 
     public void draw(TextGraphics graphics)
     {

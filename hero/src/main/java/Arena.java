@@ -197,7 +197,9 @@ public class Arena {
 
     public void verifyMonsterCollisions()
     {
-        for (Monster monster : monsters) if (monster.getPosition().equals(hero.getPosition()))
+        for (Monster monster : monsters) if (monster.getPosition().equals(hero.getPosition())) hero.lowerEnergy();
+
+        if (hero.isDead)
         {
             System.out.println("GAME OVER");
             Game.shouldContinue = false;
