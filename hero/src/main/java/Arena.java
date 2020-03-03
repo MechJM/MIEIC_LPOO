@@ -17,7 +17,8 @@ public class Arena {
     private List<Wall> walls;
     private List<Coin> coins;
     private List<Monster> monsters;
-    Hero hero;
+    private int score;
+    private Hero hero;
     //functions
 
 
@@ -28,6 +29,7 @@ public class Arena {
         this.walls = createWalls();
         this.coins = createCoins();
         this.monsters = createMonsters();
+        score = 0;
     }
 
     public int getWidth() {
@@ -92,20 +94,12 @@ public class Arena {
 
     public void moveHero(Position position)
     {
-        if (canHeroMove(position))
+        if (canMove(position))
             hero.setPosition(position);
         retrieveCoins();
     }
 
-    private boolean canHeroMove(Position position)
-    {
-        for (Wall wall : walls)
-        {
-            if (wall.getPosition().equals(position)) return false;
-        }
 
-        return true;
-    }
 
     private List<Wall> createWalls() {
         List<Wall> walls = new ArrayList<>();
@@ -151,6 +145,7 @@ public class Arena {
             if (coin.getPosition().equals(hero.getPosition()))
             {
                 coins.remove(coin);
+                score++;
                 break;
             }
         }
@@ -184,12 +179,12 @@ public class Arena {
         verifyMonsterCollisions();
         for (Monster monster : monsters) {
             Position newMonsterPosition = monster.move();
-            if (canMonsterMove(newMonsterPosition)) monster.setPosition(newMonsterPosition);
+            if (canMove(newMonsterPosition)) monster.setPosition(newMonsterPosition);
         }
         verifyMonsterCollisions();
     }
 
-    public boolean canMonsterMove(Position position)
+    public boolean canMove(Position position)
     {
         for (Wall wall : walls) if (wall.getPosition().equals(position)) return false;
         return true;
@@ -202,6 +197,8 @@ public class Arena {
         if (hero.isDead)
         {
             System.out.println("GAME OVER");
+            System.out.print("Score: ");
+            System.out.println(score);
             Game.shouldContinue = false;
         }
     }
