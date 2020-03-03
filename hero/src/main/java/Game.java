@@ -44,8 +44,8 @@ public class Game {
     {
         while (true) {
             draw();
-            KeyStroke key = screen.readInput();
             if (!shouldContinue) screen.close();
+            KeyStroke key = screen.readInput();
             if (key.getKeyType() == KeyType.EOF) break;
             processKey(key);
         }
