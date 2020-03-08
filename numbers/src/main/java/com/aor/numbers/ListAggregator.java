@@ -1,5 +1,6 @@
 package com.aor.numbers;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -31,7 +32,7 @@ public class ListAggregator {
      * @return The maximum value in the list.
      */
     public Integer max() {
-        int max = 0;
+        int max = -99999999;
 
         for (Integer number : list)
             if (number > max)
