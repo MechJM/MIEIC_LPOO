@@ -36,18 +36,4 @@ public class ListDeduplicatorTest {
         assertEquals(expected, distinct);
     }
 
-    @Test
-    public void deduplicate2()
-    {
-        List<Integer> list = new ArrayList<>();
-        list.add(1);
-        list.add(2);
-        list.add(4);
-        list.add(2);
-
-        ListDeduplicator deduplicator = new ListDeduplicator(list);
-        List<Integer> distinct = deduplicator.deduplicate();
-
-        assertEquals(3,distinct.size());
-    }
 }

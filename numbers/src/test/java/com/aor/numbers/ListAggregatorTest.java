@@ -67,10 +67,27 @@ public class ListAggregatorTest {
 
     @Test
     public void distinct() {
+
         ListAggregator aggregator = new ListAggregator(list);
 
-        int distinct = aggregator.distinct();
+        int distinct = aggregator.distinct(new ListDeduplicator(list));
 
         assertEquals(4, distinct);
+    }
+
+    @Test
+    public void distinct2()
+    {
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(4);
+        list.add(2);
+
+        ListAggregator aggregator = new ListAggregator(list);
+
+        int distinct = aggregator.distinct(new ListDeduplicator(list));
+
+        assertEquals(3,distinct);
     }
 }
