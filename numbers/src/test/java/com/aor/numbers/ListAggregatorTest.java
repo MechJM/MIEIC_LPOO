@@ -59,6 +59,13 @@ public class ListAggregatorTest {
     }
 
     @Test
+    public void max3()
+    {
+        List<Integer> list = new ArrayList<>();
+
+    }
+
+    @Test
     public void min() {
         ListAggregator aggregator = new ListAggregator(list);
 

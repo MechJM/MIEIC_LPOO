@@ -27,6 +27,16 @@ public class ListFilterTest {
     }
 
     @Test
+    public void PositiveFilter3()
+    {
+        PositiveFilter filter = new PositiveFilter();
+
+        boolean result = filter.accept(0);
+
+        assertEquals(false,result);
+    }
+
+    @Test
     public void DivisibleFilter()
     {
         DivisibleByFilter filter = new DivisibleByFilter(2);
