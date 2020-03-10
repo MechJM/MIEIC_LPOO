@@ -24,39 +24,21 @@ public class ListFiltererTest {
     }
 
     @Test
-    public void filterPositive()
+    public void filter()
     {
-        PositiveFilter posFilter = Mockito.mock(PositiveFilter.class);
-        Mockito.when(posFilter.accept(-1)).thenReturn(false);
-        Mockito.when(posFilter.accept(0)).thenReturn(false);
-        Mockito.when(posFilter.accept(3)).thenReturn(true);
-        Mockito.when(posFilter.accept(5)).thenReturn(true);
+        IListFilter filter = Mockito.mock(IListFilter.class);
+        Mockito.when(filter.accept(3)).thenReturn(true);
+        Mockito.when(filter.accept(-1)).thenReturn(true);
+        Mockito.when(filter.accept(0)).thenReturn(false);
+        Mockito.when(filter.accept(5)).thenReturn(false);
 
         ListFilterer filterer = new ListFilterer(list);
 
-        List<Integer> result = filterer.filter(posFilter);
+        List<Integer> result = filterer.filter(filter);
 
         List<Integer> expected = new ArrayList<>();
+        expected.add(-1);
         expected.add(3);
-        expected.add(5);
-
-        assertEquals(expected,result);
-    }
-
-    @Test
-    public void filterDivisible()
-    {
-        DivisibleByFilter divFilter = Mockito.mock(DivisibleByFilter.class);
-        Mockito.when(divFilter.accept(-1)).thenReturn(false);
-        Mockito.when(divFilter.accept(0)).thenReturn(true);
-        Mockito.when(divFilter.accept(3)).thenReturn(false);
-        Mockito.when(divFilter.accept(5)).thenReturn(false);
-
-        ListFilterer filterer = new ListFilterer(list);
-        List<Integer> result = filterer.filter(divFilter);
-
-        List<Integer> expected = new ArrayList<>();
-        expected.add(0);
 
         assertEquals(expected,result);
     }
