@@ -14,7 +14,7 @@ public class ListFiltererTest {
     private List<Integer> list;
 
     @Before
-    private void setup()
+    public void setup()
     {
         list = new ArrayList<>();
         list.add(-1);
