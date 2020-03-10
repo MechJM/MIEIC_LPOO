@@ -58,12 +58,6 @@ public class ListAggregatorTest {
         assertEquals(-1,max);
     }
 
-    @Test
-    public void max3()
-    {
-        List<Integer> list = new ArrayList<>();
-
-    }
 
     @Test
     public void min() {
