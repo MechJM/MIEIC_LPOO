@@ -47,4 +47,14 @@ public class Concert {
         this.city = city;
     }
 
+    @Override
+    public boolean equals(Object o)
+    {
+        if (this == o) return true;
+        if (o == null) return true;
+        if (getClass() != o.getClass()) return false;
+
+        Concert concert = (Concert) o;
+        return (city.equals(concert.city) && country.equals(concert.country) && date.equals(concert.date) && acts.equals(concert.acts));
+    }
 }

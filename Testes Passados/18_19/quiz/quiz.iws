@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b435420-c662-432d-9308-eb90bd7ac2cd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Act.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Artist.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Band.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Concert.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz.iws" beforeDir="false" afterPath="$PROJECT_DIR$/quiz.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Concert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Concert.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TestCases.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +47,12 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553520726322" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -161,7 +166,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1553507421844</updated>
-      <workItem from="1583848169316" duration="1268000" />
+      <workItem from="1583848169316" duration="1801000" />
     </task>
     <servers />
   </component>
@@ -169,26 +174,34 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="962" y="-18" width="954" height="1069" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1583849767955">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="962" y="-18" width="954" height="1069" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1583849767955" />
+    <state x="766" y="205" width="378" height="571" key="#com.intellij.ide.util.MemberChooser" timestamp="1583849558415">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="766" y="205" width="378" height="571" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1583849558415" />
     <state x="797" y="360" width="312" height="212" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1583848206062">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="797" y="360" width="312" height="212" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1583848206062" />
-    <state width="1874" height="288" key="GridCell.Tab.0.bottom" timestamp="1583848876221">
+    <state width="1874" height="288" key="GridCell.Tab.0.bottom" timestamp="1583849974851">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="288" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1583848876221" />
-    <state width="1874" height="288" key="GridCell.Tab.0.center" timestamp="1583848876221">
+    <state width="1874" height="288" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1583849974851" />
+    <state width="1874" height="288" key="GridCell.Tab.0.center" timestamp="1583849974850">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="288" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1583848876221" />
-    <state width="1874" height="288" key="GridCell.Tab.0.left" timestamp="1583848876220">
+    <state width="1874" height="288" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1583849974850" />
+    <state width="1874" height="288" key="GridCell.Tab.0.left" timestamp="1583849974850">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="288" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1583848876220" />
-    <state width="1874" height="288" key="GridCell.Tab.0.right" timestamp="1583848876221">
+    <state width="1874" height="288" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1583849974850" />
+    <state width="1874" height="288" key="GridCell.Tab.0.right" timestamp="1583849974850">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="288" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1583848876221" />
+    <state width="1874" height="288" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1583849974850" />
   </component>
   <component name="masterDetails">
     <states>
