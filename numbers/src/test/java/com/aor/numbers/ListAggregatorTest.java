@@ -82,7 +82,7 @@ public class ListAggregatorTest {
         {
 
             @Override
-            public List<Integer> deduplicate() {
+            public List<Integer> deduplicate(IListSorter listSorter) {
                 List<Integer> nums = new ArrayList<>();
                 nums.add(1);
                 nums.add(2);

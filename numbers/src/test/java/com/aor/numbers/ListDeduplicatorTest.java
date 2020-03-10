@@ -31,9 +31,41 @@ public class ListDeduplicatorTest {
     @Test
     public void deduplicate() {
         ListDeduplicator deduplicator = new ListDeduplicator(list);
-        List<Integer> distinct = deduplicator.deduplicate();
+        List<Integer> distinct = deduplicator.deduplicate(new ListSorter(list));
 
         assertEquals(expected, distinct);
     }
 
+    @Test
+    public void deduplicate2()
+    {
+        class ListSorterStub implements IListSorter
+        {
+
+            @Override
+            public List<Integer> sort() {
+                List<Integer> nums = new ArrayList<>();
+                nums.add(1);
+                nums.add(2);
+                nums.add(2);
+                nums.add(4);
+                return nums;
+            }
+        }
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(4);
+        list.add(2);
+
+        List<Integer> expected = new ArrayList<>();
+        expected.add(1);
+        expected.add(2);
+        expected.add(4);
+
+        ListDeduplicator deduplicator = new ListDeduplicator(list);
+        List<Integer> output = deduplicator.deduplicate(new ListSorterStub());
+
+        assertEquals(expected,output);
+    }
 }
