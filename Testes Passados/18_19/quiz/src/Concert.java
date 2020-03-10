@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Concert {
     private String date,country,city;
@@ -56,5 +57,17 @@ public class Concert {
 
         Concert concert = (Concert) o;
         return (city.equals(concert.city) && country.equals(concert.country) && date.equals(concert.date) && acts.equals(concert.acts));
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return Objects.hash(city,country,acts,date);
+    }
+
+    public boolean isValid(Ticket ticket) throws InvalidTicket
+    {
+        if (ticket.getConcert().equals(this)) return true;
+        else return false;
     }
 }

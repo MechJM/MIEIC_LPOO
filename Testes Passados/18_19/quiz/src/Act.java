@@ -1,5 +1,5 @@
 public abstract class Act {
-    private String country,name;
+    protected String country,name;
 
     Act(String name,String country)
     {

@@ -89,7 +89,7 @@ public class TestCases {
     }
 
 
-/*
+
     @Test 
     public void testSet() {
         Concert concert1 = new Concert("Paris", "France", "2019/10/10");
@@ -107,9 +107,9 @@ public class TestCases {
 
         assertEquals(4, tour.size());
     }
-*/
 
-/*
+
+
     @Test
     public void testTicket() throws InvalidTicket {
         Concert concert = new Concert("London", "UK", "2019/10/10");
@@ -126,18 +126,18 @@ public class TestCases {
         fieldsArentPublic(Ticket.class);
     }
 
-*/
 
-/*
+
+
     // This test expects the code to throw an InvalidTicket exception
     @Test(expected = InvalidTicket.class)
     public void testInvalidTicket() throws InvalidTicket {
         Concert concert = new Concert("London", "UK", "2019/10/10");
         Ticket ticket = new Ticket(-1, concert);
     }
-*/
 
-/*
+
+
     @Test
     public void testBandArtists() {
         Band radiohead = new Band("Radiohead", "UK");
@@ -163,9 +163,9 @@ public class TestCases {
         
         assertEquals(5, artists.size());
     }
-*/
 
-/*
+
+
     @Test
     public void testContains() {
         Band radiohead = new Band("Radiohead", "UK");
@@ -188,7 +188,7 @@ public class TestCases {
         assertFalse(radiohead.containsArtist(new Artist("Thom Yorke", "USA")));
         assertFalse(radiohead.containsArtist(new Artist("Tom Yorke", "UK")));
     }
-*/
+
 
 /*
     @Test
