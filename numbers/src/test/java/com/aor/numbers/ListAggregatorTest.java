@@ -78,6 +78,19 @@ public class ListAggregatorTest {
     @Test
     public void distinct2()
     {
+        class ListDeduplicatorStub implements IListDeduplicator
+        {
+
+            @Override
+            public List<Integer> deduplicate() {
+                List<Integer> nums = new ArrayList<>();
+                nums.add(1);
+                nums.add(2);
+                nums.add(4);
+                return nums;
+            }
+        }
+
         List<Integer> list = new ArrayList<>();
         list.add(1);
         list.add(2);
@@ -86,7 +99,7 @@ public class ListAggregatorTest {
 
         ListAggregator aggregator = new ListAggregator(list);
 
-        int distinct = aggregator.distinct(new ListDeduplicator(list));
+        int distinct = aggregator.distinct(new ListDeduplicatorStub());
 
         assertEquals(3,distinct);
     }
