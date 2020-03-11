@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b435420-c662-432d-9308-eb90bd7ac2cd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/InvalidTicket.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Ticket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BoxOffice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/quiz.iws" beforeDir="false" afterPath="$PROJECT_DIR$/quiz.iws" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Act.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Act.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Artist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Artist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Band.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Band.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Concert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Concert.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TestCases.java" afterDir="false" />
     </list>
@@ -22,16 +19,6 @@
         <option value="Class" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>art</find>
-      <find>United Kingdom</find>
-      <find>ticker</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>UK</replace>
-    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
@@ -172,6 +159,7 @@
       <option name="presentableId" value="Default" />
       <updated>1553507421844</updated>
       <workItem from="1583848169316" duration="3591000" />
+      <workItem from="1583959935829" duration="1552000" />
     </task>
     <servers />
   </component>
@@ -191,22 +179,22 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="797" y="360" width="312" height="212" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1583848206062" />
-    <state width="1874" height="288" key="GridCell.Tab.0.bottom" timestamp="1583851779885">
+    <state width="1874" height="288" key="GridCell.Tab.0.bottom" timestamp="1583961443785">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="288" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1583851779885" />
-    <state width="1874" height="288" key="GridCell.Tab.0.center" timestamp="1583851779883">
+    <state width="1874" height="288" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1583961443785" />
+    <state width="1874" height="288" key="GridCell.Tab.0.center" timestamp="1583961443784">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="288" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1583851779883" />
-    <state width="1874" height="288" key="GridCell.Tab.0.left" timestamp="1583851779882">
+    <state width="1874" height="288" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1583961443784" />
+    <state width="1874" height="288" key="GridCell.Tab.0.left" timestamp="1583961443784">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="288" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1583851779882" />
-    <state width="1874" height="288" key="GridCell.Tab.0.right" timestamp="1583851779884">
+    <state width="1874" height="288" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1583961443784" />
+    <state width="1874" height="288" key="GridCell.Tab.0.right" timestamp="1583961443785">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="288" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1583851779884" />
+    <state width="1874" height="288" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1583961443785" />
     <state x="623" y="215" width="672" height="678" key="search.everywhere.popup" timestamp="1583851672952">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

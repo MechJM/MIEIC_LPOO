@@ -16,4 +16,16 @@ public abstract class Act {
     {
         return country;
     }
+
+    @Override
+    public boolean equals(Object o)
+    {
+        if (o == null) return false;
+        if (this == o) return true;
+        if (o.getClass() != this.getClass()) return false;
+
+        Act a = (Act) o;
+
+        return a.name.equals(this.name) && a.country.equals(this.country);
+    }
 }

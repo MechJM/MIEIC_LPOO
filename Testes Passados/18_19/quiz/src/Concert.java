@@ -5,6 +5,7 @@ import java.util.Objects;
 public class Concert {
     private String date,country,city;
     private List<Act> acts;
+    int lastTicketNum;
 
     Concert(String city,String country,String date)
     {
@@ -12,6 +13,7 @@ public class Concert {
         this.city = city;
         this.country = country;
         acts = new ArrayList<>();
+        lastTicketNum = 1;
     }
 
     public void addAct(Act act)
@@ -70,4 +72,16 @@ public class Concert {
         if (ticket.getConcert().equals(this)) return true;
         else return false;
     }
+
+    public boolean participates(Artist artist)
+    {
+        for (Act act: acts)
+        {
+            if (act instanceof Artist && ((Artist) act).equals(artist)) return true;
+            if (act instanceof Band && ((Band) act).containsArtist(artist)) return true;
+        }
+        return false;
+    }
+
+    public void incrementTicketNum() {lastTicketNum++;}
 }

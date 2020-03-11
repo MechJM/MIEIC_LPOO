@@ -190,7 +190,7 @@ public class TestCases {
     }
 
 
-/*
+
     @Test
     public void testParticipates() {
         Concert concert = new Concert("London", "UK", "2019/10/10");
@@ -223,9 +223,9 @@ public class TestCases {
         assertFalse(concert.participates(new Artist("Bob the Builder", "USA")));
         assertFalse(concert.participates(new Artist("Tom Tom", "UK")));
     }
-*/
 
-/*
+
+
     @Test
     public void testBoxOffice() throws InvalidTicket {
         Act bob = new Artist("Bob Dylan", "USA");
@@ -257,6 +257,6 @@ public class TestCases {
         assertEquals(tickets2.get(0).getConcert(), concertParis);
         assertEquals(tickets3.get(0).getConcert(), concertLondon);
     }
-*/
+
 
 }
