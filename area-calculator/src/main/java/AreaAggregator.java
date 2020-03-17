@@ -2,16 +2,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AreaAggregator {
-    private List<Shape> shapes = new ArrayList<>();
+    private List<HasArea> HasAreas = new ArrayList<>();
 
-    public void addShape(Shape shape) {
-        shapes.add(shape);
+    public void addHasArea(HasArea HasArea) {
+        HasAreas.add(HasArea);
     }
 
     public double sum() {
         double sum = 0;
-        for (Shape shape: shapes) {
-            sum += shape.getArea();
+        for (HasArea HasArea: HasAreas) {
+            sum += HasArea.getArea();
         }
         return sum;
     }
