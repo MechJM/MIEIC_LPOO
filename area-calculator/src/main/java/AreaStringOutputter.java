@@ -1,7 +1,7 @@
 public class AreaStringOutputter {
-    private AreaAggregator aggregator;
+    private SumProvider aggregator;
 
-    public AreaStringOutputter(AreaAggregator aggregator)
+    public AreaStringOutputter(SumProvider aggregator)
     {
         this.aggregator = aggregator;
     }

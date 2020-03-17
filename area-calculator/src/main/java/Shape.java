@@ -1,4 +1,4 @@
-public interface Shape extends BasicShape,Drawable {
+public interface Shape extends Drawable {
 
 
 }

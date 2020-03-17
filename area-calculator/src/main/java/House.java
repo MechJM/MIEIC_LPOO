@@ -1,28 +1,15 @@
 public class House implements HasArea {
-    private double width,length;
+    private double area;
 
-    public House(double width, double length) {
-        this.width = width;
-        this.length = length;
-    }
-
-    public double getWidth() {
-        return width;
-    }
-
-    public void setWidth(double width) {
-        this.width = width;
-    }
-
-    public double getLength() {
-        return length;
-    }
-
-    public void setLength(double length) {
-        this.length = length;
+    public House(double area) {
+        this.area = area;
     }
 
     public double getArea() {
-        return width*length;
+        return area;
+    }
+
+    public void setArea(double area) {
+        this.area = area;
     }
 }

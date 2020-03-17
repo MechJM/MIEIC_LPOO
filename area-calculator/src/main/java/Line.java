@@ -1,4 +1,4 @@
-public class Line implements BasicShape {
+public class Line implements Shape {
     private double length;
 
     public Line(double length) {
@@ -14,4 +14,8 @@ public class Line implements BasicShape {
     }
 
     public double getArea() throws NoAreaException {throw new NoAreaException();}
+
+    public void draw() {
+        System.out.println("Line");
+    }
 }
