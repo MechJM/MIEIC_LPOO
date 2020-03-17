@@ -13,8 +13,6 @@ public class Line implements Shape {
         this.length = length;
     }
 
-    public double getArea() throws NoAreaException {throw new NoAreaException();}
-
     public void draw() {
         System.out.println("Line");
     }
