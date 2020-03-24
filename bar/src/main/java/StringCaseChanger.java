@@ -13,4 +13,19 @@ public class StringCaseChanger implements StringTransformer {
 
         drink.setText(buffer.toString());
     }
+
+    @Override
+    public void undo(StringDrink drink) {
+        String oldStr = drink.getText();
+        StringBuffer buffer = new StringBuffer(oldStr);
+
+        for (int i = 0; i < buffer.length(); i++)
+        {
+            char ch = buffer.charAt(i);
+            if (Character.isUpperCase(ch)) buffer.setCharAt(i, Character.toLowerCase(ch));
+            else buffer.setCharAt(i, Character.toUpperCase(ch));
+        }
+
+        drink.setText(buffer.toString());
+    }
 }

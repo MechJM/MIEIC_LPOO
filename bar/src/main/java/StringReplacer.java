@@ -16,6 +16,16 @@ public class StringReplacer implements StringTransformer {
         drink.setText(string);
     }
 
+    @Override
+    public void undo(StringDrink drink) {
+        String string = drink.getText();
+        for (int i = 0; i < string.length(); i++)
+        {
+            if (string.charAt(i) == newer) string = string.replace(newer,older);
+        }
+        drink.setText(string);
+    }
+
     public char getOlder() {
         return older;
     }
