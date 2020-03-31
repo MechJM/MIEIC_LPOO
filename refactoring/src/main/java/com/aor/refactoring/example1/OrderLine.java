@@ -16,4 +16,8 @@ public class OrderLine {
     public Product getProduct() {
         return product;
     }
+
+    public String getInfo() {
+        return getProduct().getName() + "(x" + getQuantity() + "): " + (getProduct().getPrice() * getQuantity()) + "\n";
+    }
 }
