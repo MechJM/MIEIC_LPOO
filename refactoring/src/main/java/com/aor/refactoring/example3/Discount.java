@@ -14,10 +14,20 @@ public class Discount {
         this.fixed = 0;
     }
 
+    private boolean thereIsFixedValue()
+    {
+        return fixed > 0;
+    }
+
+    private boolean fixedIsBiggerThanPrice(double price)
+    {
+        return fixed >  price;
+    }
+
     public double applyDiscount(double price) {
         double discountedPrice = price;
 
-        if (fixed > 0) discountedPrice = fixed > price ? 0 : price - fixed;
+        if (thereIsFixedValue()) discountedPrice = fixed > price ? 0 : price - fixed;
         else if (percentage > 0) discountedPrice = price - price * percentage;
         else discountedPrice = price;
 
