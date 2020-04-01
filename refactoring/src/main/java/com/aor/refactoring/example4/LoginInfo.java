@@ -1,7 +1,5 @@
 package com.aor.refactoring.example4;
 
-import java.util.Objects;
-
 public class LoginInfo {
     private final String username;
     private final String password;
@@ -17,6 +15,11 @@ public class LoginInfo {
 
     public String getPassword() {
         return password;
+    }
+
+    public boolean login(LoginInfo loginInfo)
+    {
+        return this.equals(loginInfo);
     }
 
     @Override

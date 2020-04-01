@@ -13,8 +13,8 @@ public class WorkerTest {
         Worker worker = new Worker(personalInfo,loginInfo);
         assertEquals("John Doe", worker.getName());
         assertEquals("+1 222-22222", worker.getPhone());
-        assertFalse(worker.login(new LoginInfo("john", "wrong")));
-        assertTrue(worker.login(loginInfo));
+        assertFalse(worker.getLoginInfo().login(new LoginInfo("john", "wrong")));
+        assertTrue(worker.getLoginInfo().login(loginInfo));
     }
 
     @Test
@@ -30,8 +30,8 @@ public class WorkerTest {
 
         assertEquals("John Doe", supervisor.getName());
         assertEquals("+1 222-22222", supervisor.getPhone());
-        assertFalse(supervisor.login(new LoginInfo("john", "wrong")));
-        assertTrue(supervisor.login(loginInfo));
+        assertFalse(supervisor.getLoginInfo().login(new LoginInfo("john", "wrong")));
+        assertTrue(supervisor.getLoginInfo().login(loginInfo));
         assertTrue(supervisor.isSupervisee(minion1));
         assertFalse(supervisor.isSupervisee(minion2));
     }

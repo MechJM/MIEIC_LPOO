@@ -6,8 +6,4 @@ public class Client extends Worker {
         super(personalInfo,null);
     }
 
-    @Override
-    public boolean login(LoginInfo loginInfo) {
-        return false;
-    }
 }

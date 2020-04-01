@@ -12,16 +12,20 @@ public class Worker {
         this.personalInfo = personalInfo;
     }
 
-    public boolean login(LoginInfo loginInfo) {
-        return this.loginInfo.getUsername().equals(loginInfo.getUsername()) && this.loginInfo.getPassword().equals(loginInfo.getPassword());
-    }
-
     public String getName() {
         return personalInfo.getName();
     }
 
     public String getPhone() {
         return personalInfo.getPhone();
+    }
+
+    public LoginInfo getLoginInfo() {
+        return loginInfo;
+    }
+
+    public PersonalInfo getPersonalInfo() {
+        return personalInfo;
     }
 
     @Override
