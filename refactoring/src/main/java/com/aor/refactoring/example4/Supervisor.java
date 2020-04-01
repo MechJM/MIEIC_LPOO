@@ -6,8 +6,8 @@ import java.util.Set;
 public class Supervisor extends Worker {
     Set<Worker> supervisee;
     
-    public Supervisor(String name, String phone, String username, String password) {
-        super(name, phone, username, password);
+    public Supervisor(PersonalInfo personalInfo,LoginInfo loginInfo) {
+        super(personalInfo,loginInfo);
         supervisee = new HashSet<>();
     }
     

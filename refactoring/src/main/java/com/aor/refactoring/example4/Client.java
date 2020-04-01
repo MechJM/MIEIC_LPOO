@@ -2,12 +2,12 @@ package com.aor.refactoring.example4;
 
 public class Client extends Worker {
 
-    public Client(String name, String phone) {
-        super(name, phone, null, null);
+    public Client(PersonalInfo personalInfo) {
+        super(personalInfo,null);
     }
 
     @Override
-    public boolean login(String username, String password) {
+    public boolean login(LoginInfo loginInfo) {
         return false;
     }
 }

@@ -3,28 +3,25 @@ package com.aor.refactoring.example4;
 import java.util.Objects;
 
 public class Worker {
-    private final String name;
-    private final String phone;
-    private final String username;
-    private final String password;
+    private final LoginInfo loginInfo;
+    private final PersonalInfo personalInfo;
+    
 
-    public Worker(String name, String phone, String username, String password) {
-        this.name = name;
-        this.phone = phone;
-        this.username = username;
-        this.password = password;
+    public Worker(PersonalInfo personalInfo,LoginInfo loginInfo) {
+        this.loginInfo = loginInfo;
+        this.personalInfo = personalInfo;
     }
 
-    public boolean login(String username, String password) {
-        return this.username.equals(username) && this.password.equals(password);
+    public boolean login(LoginInfo loginInfo) {
+        return this.loginInfo.getUsername().equals(loginInfo.getUsername()) && this.loginInfo.getPassword().equals(loginInfo.getPassword());
     }
 
     public String getName() {
-        return name;
+        return personalInfo.getName();
     }
 
     public String getPhone() {
-        return phone;
+        return personalInfo.getPhone();
     }
 
     @Override
@@ -32,14 +29,11 @@ public class Worker {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Worker worker = (Worker) o;
-        return Objects.equals(name, worker.name) &&
-                Objects.equals(phone, worker.phone) &&
-                Objects.equals(username, worker.username) &&
-                Objects.equals(password, worker.password);
+        return Objects.equals(this.loginInfo,worker.loginInfo) && Objects.equals(this.personalInfo,worker.personalInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, phone, username, password);
+        return Objects.hash(loginInfo,personalInfo);
     }
 }
