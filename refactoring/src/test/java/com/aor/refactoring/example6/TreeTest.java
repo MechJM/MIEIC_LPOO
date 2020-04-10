@@ -17,25 +17,27 @@ public class TreeTest {
     @Before
     public void setUp() throws ParseException {
         SimpleDateFormat sdf = new SimpleDateFormat("dd-M-yyyy hh:mm:ss");
+        Location location = new Location("41.177772696363114", "-8.59843522310257", "FEUP");
         date = sdf.parse("31-08-2002 10:20:56");
-        tree = new Tree(date, "41.177772696363114", "-8.59843522310257", "FEUP");
+        tree = new Tree(date, location);
     }
 
     @Test
     public void testTreeCreation() {
         assertEquals(tree.plantedAt, date);
-        assertEquals(tree.locationLatitude, "41.177772696363114");
-        assertEquals(tree.locationLongitude, "-8.59843522310257");
-        assertEquals(tree.locationName, "FEUP");
+        assertEquals(tree.getLocation().getLocationLatitude() , "41.177772696363114");
+        assertEquals(tree.getLocation().getLocationLongitude(), "-8.59843522310257");
+        assertEquals(tree.getLocation().getLocationName(), "FEUP");
     }
 
     @Test
     public void testTreeSetLocation() {
-        tree.setLocation("loclat", "loclon", "locname");
+        Location loc = new Location("loclat", "loclon", "locname");
+        tree.setLocation(loc);
         assertEquals(tree.plantedAt, date);
-        assertEquals(tree.locationLatitude, "loclat");
-        assertEquals(tree.locationLongitude, "loclon");
-        assertEquals(tree.locationName, "locname");
+        assertEquals(tree.getLocation().getLocationLatitude(), "loclat");
+        assertEquals(tree.getLocation().getLocationLongitude(), "loclon");
+        assertEquals(tree.getLocation().getLocationName(), "locname");
     }
 
     @Test
