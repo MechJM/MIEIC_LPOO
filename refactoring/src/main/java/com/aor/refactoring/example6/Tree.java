@@ -7,11 +7,6 @@ import java.util.List;
 
 public class Tree {
     public Date plantedAt;
-
-    public Location getLocation() {
-        return location;
-    }
-
     private Location location;
     private List<Date> appraisalDates;
 
@@ -23,6 +18,10 @@ public class Tree {
 
     public void setLocation(Location location){
         this.location = location;
+    }
+
+    public Location getLocation() {
+        return location;
     }
 
     public String toString() {
@@ -62,9 +61,12 @@ public class Tree {
         calendar.setTime(latestAppraisalDate);
         calendar.add(Calendar.MONTH, 3);
 
-        if (calendar.get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY)
+        final boolean isSaturday = calendar.get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY;
+        final boolean isSunday   = calendar.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY;
+
+        if (isSaturday)
             calendar.add(Calendar.DAY_OF_MONTH, 1);
-        else if (calendar.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY)
+        else if (isSunday)
             calendar.add(Calendar.DAY_OF_MONTH, 2);
 
         Date nextAppraisalDate = calendar.getTime();
