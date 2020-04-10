@@ -1,7 +1,7 @@
 ## Smells
-- Switch statements in the execute function
-- Comments in the execute function
+1. Switch statements in the execute function
+2. Comments in the execute function
 
 ## Refactorings
-- [Extract method](https://refactoring.guru/extract-method)
-- [Extract variable](https://refactoring.guru/extract-variable)
+1. [Extract method](https://refactoring.guru/extract-method)
+2. [Extract variable](https://refactoring.guru/extract-variable)
